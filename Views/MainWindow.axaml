@@ -1,0 +1,52 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GulmayMC.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GulmayMC.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="GulmayMC">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <TabControl>
+        <TabItem Header="Basics">
+            <StackPanel Margin="20" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="{Binding Greeting}" FontSize="18" />
+                <TextBlock Text="{Binding DynamicText}" FontSize="14" />
+                <Button Content="Update Text" Command="{Binding UpdateTextCommand}" />
+                <NumericUpDown Value="{Binding SelectedNumber, Mode=TwoWay}" Minimum="0" Maximum="100" Increment="1" />
+                <ComboBox ItemsSource="{Binding Options}" SelectedItem="{Binding SelectedOption, Mode=TwoWay}" />
+                <Slider Value="{Binding SliderValue, Mode=TwoWay}" Minimum="0" Maximum="100" HorizontalAlignment="Stretch"/>
+                <ProgressBar Value="{Binding SliderValue}" Minimum="0" Maximum="100" Height="20" HorizontalAlignment="Stretch"/>
+                <TextBox Text="{Binding InputText, Mode=TwoWay}" Watermark="Enter text..." HorizontalAlignment="Stretch"/>
+                <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" Content="Enable Feature"/>
+                <Image Source="/Assets/sample.png" Width="100" Height="100" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Advanced">
+            <StackPanel Margin="20" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Advanced Features" FontSize="18" />
+                <Button Content="Placeholder" />
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Settings">
+            <Grid Margin="20" RowDefinitions="Auto,Auto,*" ColumnDefinitions="*,*">
+                <TextBlock Text="Item Name:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding InputText, Mode=TwoWay}" Grid.Row="0" Grid.Column="1"/>
+                <Button Content="Add Item" Command="{Binding AddItemCommand}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+                <ListBox ItemsSource="{Binding Items}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
