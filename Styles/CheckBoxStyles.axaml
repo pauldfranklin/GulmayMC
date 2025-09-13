@@ -1,0 +1,90 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Define resources in a ResourceDictionary -->
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="CustomCheckBoxTemplate" TargetType="CheckBox">
+                <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="4">
+                    <Grid ColumnDefinitions="Auto,*">
+                        <!-- Checkbox indicator -->
+                        <Border x:Name="CheckIndicator"
+                                Width="16"
+                                Height="16"
+                                Background="Transparent"
+                                BorderBrush="{TemplateBinding Foreground}"
+                                BorderThickness="2"
+                                CornerRadius="2"
+                                VerticalAlignment="Center"
+                                Margin="4,0,4,0"
+                                Grid.Column="0">
+                            <Path x:Name="CheckMark"
+                                  Data="M 0,5 L 5,10 L 12,0"
+                                  Stroke="{TemplateBinding Foreground}"
+                                  StrokeThickness="2"
+                                  IsVisible="{TemplateBinding IsChecked}"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"/>
+                        </Border>
+                        <!-- Content -->
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                         ContentTemplate="{TemplateBinding ContentTemplate}"
+                                         Margin="{TemplateBinding Padding}"
+                                         VerticalAlignment="Center"
+                                         Grid.Column="1"/>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <!-- Style for CheckBox (default state) -->
+    <Style Selector="CheckBox">
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0" Color="#228B22"/>
+                <GradientStop Offset="1" Color="#006400"/>
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#006400"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="Template" Value="{StaticResource CustomCheckBoxTemplate}"/>
+    </Style>
+    <!-- Style for hover state -->
+    <Style Selector="CheckBox:pointerover">
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0" Color="#32CD32"/>
+                <GradientStop Offset="1" Color="#228B22"/>
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#228B22"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <!-- Style for checked state -->
+    <Style Selector="CheckBox:checked">
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0" Color="#228B22"/>
+                <GradientStop Offset="1" Color="#006400"/>
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#006400"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <!-- Style for checked and hover state -->
+    <Style Selector="CheckBox:checked:pointerover">
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0" Color="#32CD32"/>
+                <GradientStop Offset="1" Color="#228B22"/>
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#228B22"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+</Styles>

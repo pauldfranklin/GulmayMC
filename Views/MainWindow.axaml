@@ -18,11 +18,15 @@
   </Design.DataContext>
   
   <Window.Styles>
+    <StyleInclude Source="avares://GulmayMC/Styles/CheckBoxStyles.axaml" />
     <StyleInclude Source="avares://GulmayMC/Styles/TabItemStyles.axaml" />
     <StyleInclude Source="avares://GulmayMC/Styles/NumericUpDownStyles.axaml" />
     <StyleInclude Source="avares://GulmayMC/Styles/SliderStyles.axaml" />
   </Window.Styles>
   
+  <StackPanel Orientation="Vertical">
+    <TextBlock Text="GulmayMC Application" FontSize="24" FontWeight="Bold" Margin="10" HorizontalAlignment="Center" />
+    <Separator Margin="0,0,0,10"/>
   <TabControl>
     <TabItem Header="Basics">
       <StackPanel Margin="20" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -60,4 +64,5 @@
       </Grid>
     </TabItem>
   </TabControl>
+  </StackPanel>
 </Window>

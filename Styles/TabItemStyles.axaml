@@ -2,10 +2,57 @@
 
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style Selector="TabItem">
-        <Setter Property="Background" Value="LightGray" />
+    <Style Selector="TabControl TabItem">
+        <Setter Property="Width" Value="150" /> <!-- Fixed width of 150 pixels -->
+        <Setter Property="FontSize" Value="16" /> <!-- Default font size -->
+        <Setter Property="FontWeight" Value="Normal" /> <!-- Default font weight -->
+        <Setter Property="ZIndex" Value="0" /> <!-- Base rendering order -->
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush Source="avares://GulmayMC/Assets/Tab3dCyan.png" Stretch="Fill" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{TemplateBinding Background}"
+                        ZIndex="{TemplateBinding ZIndex}">
+                    <ContentPresenter Content="{TemplateBinding Header}"
+                                     FontSize="{TemplateBinding FontSize}"
+                                     FontWeight="{TemplateBinding FontWeight}"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
     </Style>
-    <Style Selector="TabItem:selected">
-        <Setter Property="Background" Value="White" />
+    <Style Selector="TabControl TabItem:pointerover">
+        <Setter Property="FontSize" Value="16.5" /> <!-- Increase font size by 0.5 on hover -->
+        <Setter Property="FontWeight" Value="Bold" /> <!-- Bold on hover -->
+        <Setter Property="ZIndex" Value="1" /> <!-- Higher rendering order for hover -->
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush Source="avares://GulmayMC/Assets/Tab3dCyan.png" Stretch="Fill" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style Selector="TabControl TabItem:selected">
+        <Setter Property="FontSize" Value="16" /> <!-- Default font size for selected tab -->
+        <Setter Property="FontWeight" Value="Bold" /> <!-- Bold for selected tab -->
+        <Setter Property="ZIndex" Value="2" /> <!-- Higher rendering order for selected tab -->
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush Source="avares://GulmayMC/Assets/Tab3dGreen.png" Stretch="Fill" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style Selector="TabControl TabItem:selected:pointerover">
+        <Setter Property="FontSize" Value="16.5" /> <!-- Increase font size by 0.5 on hover for selected tab -->
+        <Setter Property="FontWeight" Value="Bold" /> <!-- Bold on hover (redundant but explicit) -->
+        <Setter Property="ZIndex" Value="3" /> <!-- Highest rendering order for selected and hovered -->
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush Source="avares://GulmayMC/Assets/Tab3dGreen.png" Stretch="Fill" />
+            </Setter.Value>
+        </Setter>
     </Style>
 </Styles>
