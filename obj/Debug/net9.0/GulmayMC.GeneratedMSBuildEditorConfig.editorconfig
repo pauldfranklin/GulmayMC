@@ -29,5 +29,14 @@ build_property.EnableCodeStyleSeverity =
 [/home/paul/Projects/GulmayMC/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/paul/Projects/GulmayMC/Styles/NumericUpDownStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/paul/Projects/GulmayMC/Styles/SliderStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/paul/Projects/GulmayMC/Styles/TabItemStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/paul/Projects/GulmayMC/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

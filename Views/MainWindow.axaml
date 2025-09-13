@@ -1,3 +1,5 @@
+<!-- This XAML file defines the main window of the GulmayMC application using Avalonia UI framework. -->
+
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:GulmayMC.ViewModels"
@@ -10,130 +12,15 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="GulmayMC">
+  
   <Design.DataContext>
     <vm:MainWindowViewModel />
   </Design.DataContext>
+  
   <Window.Styles>
-    <!-- TabItem Styles -->
-    <Style Selector="TabItem">
-      <Setter Property="Background" Value="LightGray" />
-    </Style>
-    <Style Selector="TabItem:selected">
-      <Setter Property="Background" Value="White" />
-    </Style>
-    <!-- NumericUpDown Style -->
-    <Style Selector="NumericUpDown /template/ ButtonSpinner">
-      <Setter Property="Template">
-        <ControlTemplate>
-          <DataValidationErrors>
-            <Border Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="{TemplateBinding CornerRadius}"
-                    MinHeight="{TemplateBinding MinHeight}"
-                    Width="120">
-              <DockPanel>
-                <UniformGrid Rows="2" Name="PART_SpinnerPanel"
-                             DockPanel.Dock="Right"
-                             MinWidth="20"
-                             IsVisible="{TemplateBinding ShowButtonSpinner}">
-                  <RepeatButton Name="PART_IncreaseButton"
-                                Classes="ButtonSpinnerRepeatButton"
-                                VerticalContentAlignment="Center"
-                                HorizontalContentAlignment="Center"
-                                Padding="0"
-                                Foreground="{TemplateBinding Foreground}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                Background="{TemplateBinding Background}"
-                                FontSize="{TemplateBinding FontSize}">
-                    <Image Source="/Assets/ArrowUpRed.png"
-                           Width="20"
-                           Height="20"
-                           Stretch="Uniform"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center" />
-                  </RepeatButton>
-                  <RepeatButton Name="PART_DecreaseButton"
-                                Classes="ButtonSpinnerRepeatButton"
-                                VerticalContentAlignment="Center"
-                                HorizontalContentAlignment="Center"
-                                Padding="0"
-                                Foreground="{TemplateBinding Foreground}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                Background="{TemplateBinding Background}"
-                                FontSize="{TemplateBinding FontSize}">
-                    <Image Source="/Assets/ArrowDownRed.png"
-                           Width="20"
-                           Height="20"
-                           Stretch="Uniform"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center" />
-                  </RepeatButton>
-                </UniformGrid>
-                <ContentPresenter Name="PART_ContentPresenter"
-                                  ContentTemplate="{TemplateBinding ContentTemplate}"
-                                  Content="{TemplateBinding Content}"
-                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                  Padding="{TemplateBinding Padding}"
-                                  FontSize="30" />
-              </DockPanel>
-            </Border>
-          </DataValidationErrors>
-        </ControlTemplate>
-      </Setter>
-    </Style>
-    <!-- Slider Style -->
-    <Style Selector="Slider.custom">
-      <Setter Property="Template">
-        <ControlTemplate>
-          <Grid>
-            <Grid.RowDefinitions>
-              <RowDefinition Height="Auto" />
-              <RowDefinition Height="Auto" />
-              <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <!-- Track Background -->
-            <Border Name="PART_TrackBackground"
-                    Grid.Row="1"
-                    Background="LightGray"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="2"
-                    Height="4"
-                    VerticalAlignment="Center" />
-            <!-- Track Fill (Progress) -->
-
-            <!-- Track -->
-            <Track Name="PART_Track"
-                   Grid.Row="1"
-                   Orientation="{TemplateBinding Orientation}"
-                   Minimum="{TemplateBinding Minimum}"
-                   Maximum="{TemplateBinding Maximum}"
-                   Value="{TemplateBinding Value, Mode=TwoWay}"
-                   IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
-                   IsEnabled="{TemplateBinding IsEnabled}">
-              <Track.Thumb>
-                <Thumb Name="PART_Thumb">
-                  <Thumb.Template>
-                    <ControlTemplate>
-                      <Border Background="Transparent">
-                        <Image Source="avares://GulmayMC/Assets/SliderThumbHorizontalWhite.png"
-                               Width="40"
-                               Height="20"
-                               Stretch="Uniform"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center" />
-                      </Border>
-                    </ControlTemplate>
-                  </Thumb.Template>
-                </Thumb>
-              </Track.Thumb>
-            </Track>
-          </Grid>
-        </ControlTemplate>
-      </Setter>
-    </Style>
+    <StyleInclude Source="avares://GulmayMC/Styles/TabItemStyles.axaml" />
+    <StyleInclude Source="avares://GulmayMC/Styles/NumericUpDownStyles.axaml" />
+    <StyleInclude Source="avares://GulmayMC/Styles/SliderStyles.axaml" />
   </Window.Styles>
   
   <TabControl>

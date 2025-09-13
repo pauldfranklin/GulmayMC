@@ -1,0 +1,66 @@
+<!-- This style customizes the NumericUpDown control to use red arrow images for the increment and decrement buttons. -->
+
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Style Selector="NumericUpDown /template/ ButtonSpinner">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DataValidationErrors>
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  MinHeight="{TemplateBinding MinHeight}"
+                  Width="120">
+            <DockPanel>
+              <UniformGrid Rows="2" Name="PART_SpinnerPanel"
+                           DockPanel.Dock="Right"
+                           MinWidth="20"
+                           IsVisible="{TemplateBinding ShowButtonSpinner}">
+                <RepeatButton Name="PART_IncreaseButton"
+                              Classes="ButtonSpinnerRepeatButton"
+                              VerticalContentAlignment="Center"
+                              HorizontalContentAlignment="Center"
+                              Padding="0"
+                              Foreground="{TemplateBinding Foreground}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              Background="{TemplateBinding Background}"
+                              FontSize="{TemplateBinding FontSize}">
+                  <Image Source="/Assets/ArrowUpRed.png"
+                         Width="20"
+                         Height="20"
+                         Stretch="Uniform"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center" />
+                </RepeatButton>
+                <RepeatButton Name="PART_DecreaseButton"
+                              Classes="ButtonSpinnerRepeatButton"
+                              VerticalContentAlignment="Center"
+                              HorizontalContentAlignment="Center"
+                              Padding="0"
+                              Foreground="{TemplateBinding Foreground}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              Background="{TemplateBinding Background}"
+                              FontSize="{TemplateBinding FontSize}">
+                  <Image Source="/Assets/ArrowDownRed.png"
+                         Width="20"
+                         Height="20"
+                         Stretch="Uniform"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center" />
+                </RepeatButton>
+              </UniformGrid>
+              <ContentPresenter Name="PART_ContentPresenter"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                Content="{TemplateBinding Content}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Padding="{TemplateBinding Padding}"
+                                FontSize="30" />
+            </DockPanel>
+          </Border>
+        </DataValidationErrors>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

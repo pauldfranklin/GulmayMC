@@ -1,0 +1,11 @@
+<!-- This file defines styles for TabItem controls in an Avalonia application -->
+
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style Selector="TabItem">
+        <Setter Property="Background" Value="LightGray" />
+    </Style>
+    <Style Selector="TabItem:selected">
+        <Setter Property="Background" Value="White" />
+    </Style>
+</Styles>

@@ -1,0 +1,62 @@
+<!-- This XAML file defines custom styles for Slider controls in Avalonia UI. -->
+
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Style Selector="Slider.custom">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <!-- Track Background -->
+          <Border Name="PART_TrackBackground"
+                  Grid.Row="1"
+                  Background="LightGray"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="2"
+                  Height="4"
+                  VerticalAlignment="Center" />
+          <!-- Track Fill (Progress) -->
+          <Border Name="PART_TrackFill"
+                  Grid.Row="1"
+                  Background="Blue"
+                  CornerRadius="2"
+                  Height="4"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Left" />
+          <!-- Track -->
+          <Track Name="PART_Track"
+                 Grid.Row="1"
+                 Orientation="{TemplateBinding Orientation}"
+                 Minimum="{TemplateBinding Minimum}"
+                 Maximum="{TemplateBinding Maximum}"
+                 Value="{TemplateBinding Value, Mode=TwoWay}"
+                 IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
+                 IsEnabled="{TemplateBinding IsEnabled}">
+            <Track.Thumb>
+              <Thumb Name="PART_Thumb">
+                <Thumb.Template>
+                  <ControlTemplate>
+                    <Border Background="Transparent">
+                      <Image Source="avares://GulmayMC/Assets/SliderThumbHorizontalWhite.png"
+                             Width="40"
+                             Height="20"
+                             Stretch="Uniform"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center" />
+                    </Border>
+                  </ControlTemplate>
+                </Thumb.Template>
+              </Thumb>
+            </Track.Thumb>
+          </Track>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
+
