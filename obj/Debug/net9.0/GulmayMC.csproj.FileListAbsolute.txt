@@ -77,3 +77,4 @@
 /home/paul/Projects/GulmayMC/bin/Debug/net9.0/ReactiveUI.dll
 /home/paul/Projects/GulmayMC/bin/Debug/net9.0/Splat.dll
 /home/paul/Projects/GulmayMC/bin/Debug/net9.0/System.Reactive.dll
+/home/paul/Projects/GulmayMC/obj/Debug/net9.0/GulmayMC.sourcelink.json
