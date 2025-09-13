@@ -18,6 +18,7 @@
   </Design.DataContext>
   
   <Window.Styles>
+    <StyleInclude Source="avares://GulmayMC/Styles/ComboBoxStyles.axaml" />
     <StyleInclude Source="avares://GulmayMC/Styles/CheckBoxStyles.axaml" />
     <StyleInclude Source="avares://GulmayMC/Styles/TabItemStyles.axaml" />
     <StyleInclude Source="avares://GulmayMC/Styles/NumericUpDownStyles.axaml" />

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GulmayMC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+902fe3b8b8744506a357273f804a03d7402b7774")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11b31a24c8c6151b3126b7bc7089618d610327fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("GulmayMC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GulmayMC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

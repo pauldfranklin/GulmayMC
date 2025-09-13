@@ -5,6 +5,7 @@
       <map>
         <entry key="App.axaml" value="GulmayMC.csproj" />
         <entry key="Styles/CheckBoxStyles.axaml" value="GulmayMC.csproj" />
+        <entry key="Styles/ComboBoxStyles.axaml" value="GulmayMC.csproj" />
         <entry key="Styles/NumericUpDownStyles.axaml" value="GulmayMC.csproj" />
         <entry key="Styles/SliderStyles.axaml" value="GulmayMC.csproj" />
         <entry key="Styles/TabItemStyles.axaml" value="GulmayMC.csproj" />
